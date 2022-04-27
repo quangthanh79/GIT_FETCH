@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="community"
+            type="com.apion.apionhome.data.model.community.Community" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageAvatar"
+            image="@{community.avatar}"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:padding="@dimen/dp_1"
+            android:paddingStart="@dimen/dp_2"
+            android:paddingTop="@dimen/dp_4"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundImageView48"
+            app:strokeColor="@color/color_second_primary"
+            app:strokeWidth="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/textNameCommunity"
+            style="@style/TextNormal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@{community.name}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toStartOf="@+id/buttonJoin"
+            app:layout_constraintStart_toEndOf="@id/imageAvatar"
+            app:layout_constraintTop_toTopOf="@+id/imageAvatar" />
+
+        <TextView
+            android:id="@+id/textPerson"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@{community.participants.size()+``}"
+            android:textSize="@dimen/sp_11"
+            app:drawableStartCompat="@drawable/ic_person_14"
+            app:layout_constraintStart_toStartOf="@id/textNameCommunity"
+            app:layout_constraintTop_toBottomOf="@+id/textNameCommunity" />
+
+        <TextView
+            android:id="@+id/textHouse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@{community.houses.size()+``}"
+            android:textSize="@dimen/sp_11"
+            app:drawableStartCompat="@drawable/ic_home_14"
+            app:layout_constraintStart_toEndOf="@id/textPerson"
+            app:layout_constraintTop_toBottomOf="@+id/textNameCommunity" />
+
+        <Button
+            android:id="@+id/buttonJoin"
+            style="@style/StyleButton"
+            community="@{community.id}"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginVertical="@dimen/dp_4"
+            android:paddingHorizontal="@dimen/dp_4"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintBottom_toBottomOf="@+id/textPerson"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageAvatar" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

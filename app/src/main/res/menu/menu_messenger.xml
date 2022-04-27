@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_phone"
+        android:icon="@drawable/ic_phone"
+        app:showAsAction="always"
+        android:title="Phone" />
+
+    <item
+        android:id="@+id/item_messages"
+        android:icon="@drawable/ic_sms"
+        app:showAsAction="always"
+        android:title="Messages" />
+
+    <item
+        android:id="@+id/item_messenger"
+        android:icon="@drawable/ic_fb"
+        app:showAsAction="always"
+        android:title="Messenger" />
+
+    <item
+        android:id="@+id/item_zalo"
+        android:icon="@drawable/ic_zalo"
+        app:showAsAction="always"
+        android:title="Zalo" />
+</menu>

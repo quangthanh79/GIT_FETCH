@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detail_gra"
+    app:startDestination="@+id/detailHouseFragment">
+
+    <activity
+        android:id="@+id/activitylogin"
+        android:name="com.apion.apionhome.ui.geting_started.StartActivity" />
+
+    <action
+        android:id="@+id/actionDetailToLogin"
+        app:destination="@+id/activitylogin" />
+
+    <fragment
+        android:id="@+id/detailImageFragment"
+        android:name="com.apion.apionhome.ui.detail.DetailImageFragment"
+        android:label="fragment_detail_image"
+        tools:layout="@layout/fragment_detail_image">
+        <argument
+            android:name="currentCount"
+            app:argType="integer" />
+        <argument
+            android:name="images"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEdit"
+        android:name="com.apion.apionhome.ui.detail.EditFragment">
+        <argument
+            android:name="houseDetail"
+            app:argType="com.apion.apionhome.data.model.House" />
+    </fragment>
+    <action
+        android:id="@+id/actionToPersonProfile"
+        app:destination="@id/personProfileFragment" />
+    <fragment
+        android:id="@+id/personProfileFragment"
+        android:name="com.apion.apionhome.ui.person.PersonProfileFragment">
+        <action
+            android:id="@+id/actionProfileToDetail"
+            app:destination="@id/activityDetail" />
+        <argument
+            android:name="userProfile"
+            app:argType="com.apion.apionhome.data.model.User_I" />
+        <action
+            android:id="@+id/actionToMyHouses"
+            app:destination="@id/myHousesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHouseFragment"
+        android:name="com.apion.apionhome.ui.detail.DetailHouseFragment"
+        android:label="fragment_detail_house"
+        tools:layout="@layout/fragment_detail_house">
+
+        <action
+            android:id="@+id/actionDetailToDetailImage"
+            app:destination="@id/detailImageFragment" />
+
+        <action
+            android:id="@+id/actionToSelf"
+            app:destination="@id/activityDetail" />
+        <action
+            android:id="@+id/action_detailHouseFragment_to_fragmentEdit"
+            app:destination="@id/fragmentEdit" />
+    </fragment>
+
+    <!--    <fragment-->
+    <!--        android:id="@+id/mapsFragment"-->
+    <!--        android:name="com.apion.apionhome.ui.detail.MapsFragment"-->
+    <!--        android:label="fragment_maps"-->
+    <!--        tools:layout="@layout/fragment_maps" />-->
+
+    <activity
+        android:id="@+id/activityDetail"
+        android:name="com.apion.apionhome.ui.detail.DetailActivity"
+        android:label="Product Details"
+        tools:layout="@layout/activity_detail">
+        <argument
+            android:name="houseDetail"
+            app:argType="com.apion.apionhome.data.model.House" />
+    </activity>
+    <action
+        android:id="@+id/actionToSelectLocationCreateHous"
+        app:destination="@id/selectLocationCreateHouse" />
+    <fragment
+        android:id="@+id/selectLocationCreateHouse"
+        android:name="com.apion.apionhome.ui.add_home.SelectLocationCreateHouseFragment" />
+
+    <action
+        android:id="@+id/actionToSearchDistrictFragment"
+        app:destination="@id/searchDistrictFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToSearchProvinceFragment"
+        app:destination="@id/searchProvinceFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToSearchWardFragment"
+        app:destination="@id/searchWardFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToSearchStreetFragment"
+        app:destination="@id/searchStreetFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+    <fragment
+        android:id="@+id/searchWardFragment"
+        android:name="com.apion.apionhome.ui.search.SearchWardFragment"
+        android:label="SearchWardFragment">
+        <argument
+            android:name="shareData3"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchStreetFragment"
+        android:name="com.apion.apionhome.ui.search.SearchStreetFragment"
+        android:label="SearchStreetFragment">
+        <argument
+            android:name="shareData4"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchProvinceFragment"
+        android:name="com.apion.apionhome.ui.search.SearchProvinceFragment"
+        android:label="SearchProvinceFragment">
+        <argument
+            android:name="shareData1"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchDistrictFragment"
+        android:name="com.apion.apionhome.ui.search.SearchDistrictFragment"
+        android:label="SearchDistrictFragment" />
+    <action
+        android:id="@+id/actionToAdd"
+        app:destination="@id/navigation_add"
+        app:popUpTo="@+id/navigation_add"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.apion.apionhome.ui.add_home.AddFragment"
+        tools:layout="@layout/fragment_create_home" />
+</navigation>

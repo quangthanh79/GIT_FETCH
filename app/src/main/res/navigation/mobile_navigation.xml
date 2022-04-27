@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <activity
+        android:id="@+id/activitylogin"
+        android:name="com.apion.apionhome.ui.geting_started.StartActivity" />
+
+    <action
+        android:id="@+id/actionToLogin"
+        app:destination="@+id/activitylogin" />
+
+    <action
+        android:id="@+id/actionMainToDetail"
+        app:destination="@id/activityDetail" />
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.apion.apionhome.ui.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/actionToDetail"
+            app:destination="@id/activityDetail" />
+        <action
+            android:id="@+id/actionToBottomSheetPriceFragment"
+            app:destination="@id/bottomSheetPrice"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+
+        <action
+            android:id="@+id/actionToSearchDetailFragment"
+            app:destination="@id/searchDetailFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/fade_out" />
+        <action
+            android:id="@+id/actionToBottomSheetSquareFragment"
+            app:destination="@id/bottomSheetSquare"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+    </fragment>
+
+    <action
+        android:id="@+id/actionToHome"
+        app:destination="@id/navigation_home"
+        app:popUpTo="@+id/mobile_navigation"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/actionToSearch"
+        app:destination="@id/navigation_search"
+        app:popUpTo="@+id/navigation_notification"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/actionToNotification"
+        app:destination="@id/navigation_notification"
+        app:popUpTo="@+id/navigation_notification"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/actionToProfile"
+        app:destination="@id/navigation_profile"
+        app:popUpTo="@+id/navigation_profile"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/actionToAdd"
+        app:destination="@id/navigation_add"
+        app:popUpTo="@+id/navigation_add"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/actionToAllHouseFragment"
+        app:destination="@id/allHouseFeatureFragment"
+        app:enterAnim="@anim/slide_left"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/fade_out" />
+
+    <action
+        android:id="@+id/actionToSearchDistrictFragment"
+        app:destination="@id/searchDistrictFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToSearchProvinceFragment"
+        app:destination="@id/searchProvinceFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToSearchWardFragment"
+        app:destination="@id/searchWardFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToSearchStreetFragment"
+        app:destination="@id/searchStreetFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+
+    <action
+        android:id="@+id/actionToDetailSearchResult"
+        app:destination="@id/searDetailResultFragment" />
+    <action
+        android:id="@+id/actionToSelectLocation"
+        app:destination="@id/selectLocationFragment"
+        app:enterAnim="@anim/slide_up"
+        app:exitAnim="@anim/fade_out"
+        app:popEnterAnim="@anim/fade_in"
+        app:popExitAnim="@anim/slide_bottom" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.apion.apionhome.ui.search.SearchFragment">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notification"
+        android:name="com.apion.apionhome.ui.notification.NotificationFragment"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/navigation_add"
+        android:name="com.apion.apionhome.ui.add_home.AddFragment"
+        tools:layout="@layout/fragment_create_home" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.apion.apionhome.ui.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile" />
+
+    <activity
+        android:id="@+id/activityDetail"
+        android:name="com.apion.apionhome.ui.detail.DetailActivity"
+        android:label="Product Details"
+        tools:layout="@layout/activity_detail">
+        <argument
+            android:name="houseDetail"
+            app:argType="com.apion.apionhome.data.model.House" />
+    </activity>
+
+    <fragment
+        android:id="@+id/searchProvinceFragment"
+        android:name="com.apion.apionhome.ui.search.SearchProvinceFragment"
+        android:label="SearchProvinceFragment">
+        <argument
+            android:name="shareData1"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchDistrictFragment"
+        android:name="com.apion.apionhome.ui.search.SearchDistrictFragment"
+        android:label="SearchDistrictFragment" />
+    <dialog
+        android:id="@+id/bottomSheetPrice"
+        android:name="com.apion.apionhome.ui.search.BottomSheetPriceFragment" />
+    <dialog
+        android:id="@+id/bottomSheetSquare"
+        android:name="com.apion.apionhome.ui.search.BottomSheetSquareFragment"
+        tools:layout="@layout/bottomsheet_square" />
+
+    <fragment
+        android:id="@+id/bottomSheetSearchDetail"
+        android:name="com.apion.apionhome.ui.search.SearchDetailFragment">
+        <action
+            android:id="@+id/actionToSearchWardFragment"
+            app:destination="@id/searchWardFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+        <action
+            android:id="@+id/actionToSearchStreetFragment"
+            app:destination="@id/searchStreetFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+        <argument
+            android:name="shareData2"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectLocationFragment"
+        android:name="com.apion.apionhome.ui.search.SelectLocationFragment" />
+    <fragment
+        android:id="@+id/searDetailResultFragment"
+        android:name="com.apion.apionhome.ui.search.SearchDetailResultFragment">
+        <action
+            android:id="@+id/actionToDetailPost"
+            app:destination="@id/activityDetail" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchWardFragment"
+        android:name="com.apion.apionhome.ui.search.SearchWardFragment"
+        android:label="SearchWardFragment">
+        <argument
+            android:name="shareData3"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchStreetFragment"
+        android:name="com.apion.apionhome.ui.search.SearchStreetFragment"
+        android:label="SearchStreetFragment">
+        <argument
+            android:name="shareData4"
+            android:defaultValue="true"
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchDetailFragment"
+        android:name="com.apion.apionhome.ui.search.SearchDetailFragment"
+        tools:layout="@layout/fragment_search_detail" />
+    <action
+        android:id="@+id/actionToPersonProfile"
+        app:destination="@id/personProfileFragment" />
+    <fragment
+        android:id="@+id/personProfileFragment"
+        android:name="com.apion.apionhome.ui.person.PersonProfileFragment">
+        <action
+            android:id="@+id/actionProfileToDetail"
+            app:destination="@id/activityDetail" />
+        <argument
+            android:name="userProfile"
+            app:argType="com.apion.apionhome.data.model.User_I" />
+        <action
+            android:id="@+id/actionToMyHouses"
+            app:destination="@id/myHousesFragment" />
+    </fragment>
+    <action
+        android:id="@+id/actionMainToMyHouses"
+        app:destination="@id/myHousesFragment" />
+    <fragment
+        android:id="@+id/myHousesFragment"
+        android:name="com.apion.apionhome.ui.person.MyHouseFragment">
+        <action
+            android:id="@+id/actionMyHouseToDetail"
+            app:destination="@id/activityDetail" />
+        <argument
+            android:name="userProfile"
+            app:argType="com.apion.apionhome.data.model.User_I" />
+    </fragment>
+    <action
+        android:id="@+id/actionMainToMyHousesSold"
+        app:destination="@id/myHousesSoldFragment" />
+    <fragment
+        android:id="@+id/myHousesSoldFragment"
+        android:name="com.apion.apionhome.ui.profile.MyHouseSoldFragment">
+        <action
+            android:id="@+id/actionMyHouseToDetail"
+            app:destination="@id/activityDetail" />
+        <argument
+            android:name="userProfile"
+            app:argType="com.apion.apionhome.data.model.User_I" />
+    </fragment>
+
+    <action
+        android:id="@+id/actionToSelectLocationCreateHous"
+        app:destination="@id/selectLocationCreateHouse" />
+
+    <fragment
+        android:id="@+id/selectLocationCreateHouse"
+        android:name="com.apion.apionhome.ui.add_home.SelectLocationCreateHouseFragment" />
+
+    <action
+        android:id="@+id/actionToLevel"
+        app:destination="@id/levelFragment" />
+
+    <fragment
+        android:id="@+id/levelFragment"
+        android:name="com.apion.apionhome.ui.profile.LevelFragment" />
+
+    <action
+        android:id="@+id/actionToUpdateProfile"
+        app:destination="@id/updateProdfileFragment" />
+
+    <fragment
+        android:id="@+id/updateProdfileFragment"
+        android:name="com.apion.apionhome.ui.profile.ProfileUpdateFragment" />
+
+    <action
+        android:id="@+id/actionToChangePincode"
+        app:destination="@id/changePincodeFragment" />
+
+    <fragment
+        android:id="@+id/changePincodeFragment"
+        android:name="com.apion.apionhome.ui.profile.ChangePincodeFragment">
+        <argument
+            android:name="userId"
+            app:argType="integer" />
+    </fragment>
+
+    <action
+        android:id="@+id/actionMainToMyHousesBookmark"
+        app:destination="@id/myHousesBookmarkFragment" />
+
+    <fragment
+        android:id="@+id/myHousesBookmarkFragment"
+        android:name="com.apion.apionhome.ui.profile.MyHouseBookmarkFragment">
+        <action
+            android:id="@+id/actionMyHouseToDetail"
+            app:destination="@id/activityDetail" />
+        <argument
+            android:name="userProfile"
+            app:argType="com.apion.apionhome.data.model.User_I" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/allHouseFeatureFragment"
+        android:name="com.apion.apionhome.ui.home.AllHouseFeatureFragment">
+        <action
+            android:id="@+id/actionHouseToDetail"
+            app:destination="@id/activityDetail" />
+
+    </fragment>
+</navigation>

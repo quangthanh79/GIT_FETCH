@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.apion.apionhome.data.model.RangeUI" />
+
+        <variable
+            name="searchVM"
+            type="com.apion.apionhome.ui.search.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="30dp">
+
+        <ImageView
+            android:id="@+id/iconBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_36"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/TextHighlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_32"
+            android:text="@string/title_detail_register"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/sp_22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/txt_ward"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_32"
+            android:text="@string/title_ward"
+            android:textColor="#888B8F"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtWard"
+            style="@style/StyleEditText2"
+            tail="@{`Phường xã`}"
+            textCustom="@{searchVM.ward.content==null?@string/hint_ward:searchVM.ward.content}"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:focusable="false"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ward" />
+
+        <TextView
+            android:id="@+id/txt_street"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_32"
+            android:text="@string/title_street"
+            android:textColor="#888B8F"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtWard" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtStreet"
+            style="@style/StyleEditText2"
+            tail="@{`Đường phố`}"
+            textCustom="@{searchVM.street.content==null?@string/hint_street:searchVM.street.content}"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:focusable="false"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_street" />
+
+        <TextView
+            android:id="@+id/txtFrontWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_18"
+            android:layout_marginTop="@dimen/dp_32"
+            android:text="@string/hint_front_width"
+            android:textColor="#888B8F"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtStreet" />
+
+        <TextView
+            android:id="@+id/edtFrontWidth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_32"
+            android:layout_marginEnd="@dimen/dp_18"
+            android:text="@string/hint_front_width"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/edtStreet" />
+
+        <SeekBar
+            android:id="@+id/seekBarHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:max="@{RangeUI.INSTANCE.frontWidthRangeUis.values().size() - 1}"
+            android:maxHeight="6dp"
+            android:progressBackgroundTint="#000000"
+            android:progressTint="#388e3c"
+            android:scaleY="1"
+            android:thumb="@drawable/thumb1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtFrontWidth" />
+
+        <Button
+            android:id="@+id/btnUse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_32"
+            android:layout_marginTop="@dimen/dp_48"
+            android:background="@drawable/background_button5"
+            android:text="@string/title_use_button"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="15sp"
+            app:backgroundTint="#4E934F"
+            app:layout_constraintEnd_toEndOf="@+id/seekBarHome"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/seekBarHome"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarHome" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

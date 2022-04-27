@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Apion Home</string>
+    <string name="tittle_retry">Thử lại</string>
+    <string name="tittle_cancel">Hủy</string>
+    <string name="tittle_close">Đóng</string>
+    <string name="tittle_exception_connect">Lỗi kết nối</string>
+    <string name="message_exception_connect">Không thể kết nối internet.  Hãy kiểm tra kết nối internet hoặc WIFI</string>
+    <string name="default_error">Đã có lỗi xảy ra…!</string>
+    <string name="tittle_button_agree">Đông ý</string>
+    <string name="tittle_button_cancel">Hủy</string>
+    <string name="tittle_button_confirm">Xác nhận</string>
+    <string name="hint_query">Tìm kiếm quận/huyện</string>
+    <string name="title_search">Tìm kiếm</string>
+    <string name="title_search_province">Tìm kiếm tỉnh, thành phố</string>
+    <string name="title_search_district">Tìm kiếm quận, huyện</string>
+    <string name="title_search_ward">Tìm kiếm phường, xã</string>
+    <string name="title_search_street">Tìm kiếm đường, phố</string>
+    <string name="text_title_search">Nhập nội dung tìm kiếm</string>
+    <string name="hint_city">Tỉnh, thành phố</string>
+    <string name="hint_district">Quận, huyện</string>
+    <string name="hint_price">Mức giá</string>
+    <string name="hint_ward">Phường, xã</string>
+    <string name="hint_ward_1">Chọn phường xã</string>
+    <string name="hint_street_1">Chọn đường phố</string>
+    <string name="title_highlight">Bất động sản nổi bật</string>
+    <string name="title_detail">Chi tiết</string>
+    <string name="title_house_hn">Loanh quanh thủ đô Hà Nội</string>
+    <string name="title_house_hcm">Vòng vòng phố thị Sài Gòn</string>
+    <string name="hint_acreage">Diện tích</string>
+    <string name="hint_front_width">Mặt tiền</string>
+    <string name="hint_street">Đường phố</string>
+    <string name="title_done">Xong</string>
+    <string name="des_my_house">Nhà đất đang sở hữu</string>
+    <string name="des_house_sold">Giao dịch đã thực hiện</string>
+    <string name="error_select_ward">Vui lòng chọn quận, huyện trước!</string>
+    <string name="title_chat_now">Chat ngay</string>
+    <string name="title_broker">Nhà môi giới đang online</string>
+    <string name="title_for_sale">Nhà đất bán</string>
+    <string name="title_for_rent">Nhà đất cho thuê</string>
+    <string name="title_view_owner">Xem đầu chủ</string>
+    <string name="title_detail_house">Chi tiết nhà ở</string>
+    <string name="title_ready_for_sale">Đang bán</string>
+    <string name="title_status_default">Chưa xác nhận</string>
+    <string name="title_descript">Nội dung:</string>
+    <string name="title_address">Địa chỉ</string>
+    <string name="title_house_direction">Hướng nhà</string>
+    <string name="title_new_type">Loại tin rao</string>
+    <string name="title_room_count">Phòng ngủ</string>
+    <string name="title_create_date">Ngày đăng</string>
+    <string name="title_relate">Bất động sản tương tự</string>
+    <string name="title_community">Cộng đồng</string>
+    <string name="title_your_group">Nhóm của bạn</string>
+    <string name="title_view_all">Chi tiết</string>
+    <string name="title_price">Chọn mức giá</string>
+    <string name="title_ward">Phường xã</string>
+    <string name="title_street">Đường phố</string>
+    <string name="title_default">Bỏ lọc</string>
+    <string name="title_search_detail">Chọn chi tiết</string>
+    <string name="title_square">Chọn diện tích</string>
+    <string name="text_community_empty">Tham gia các cộng đồng để làm quen và chia sẻ hành trình bán bất động sản đầy thử thách ngay thôi</string>
+    <string name="title_feature_community">Bất động sản nổi bật</string>
+    <string name="title_community_discover">Khám phá cộng đồng</string>
+    <string name="title_owner">Chuyên viên - Đầu chủ</string>
+    <string name="title_join">Tham gia</string>
+    <string name="title_out">Rời khỏi</string>
+    <string name="title_home">Trang chủ</string>
+    <string name="title_person">Tài khoản</string>
+    <string name="hint_input_search">Nhập nội dung tìm kiếm</string>
+    <string name="title_search_quickly">Tìm kiếm nhanh</string>
+
+    <string name="text_bottom_start_2">Robo siêu kết nối môi giới \n Bất động sản</string>
+    <string name="text_welcome_start">Chào mừng bạn đến với Apion Home</string>
+    <string name="title_start">Bắt đầu</string>
+    <string name="register"><u>Đăng ký</u></string>
+    <string name="forgetPinCode"><u>Quên pin code</u></string>
+    <string name="hint_input_phone">Nhập số điện thoại</string>
+    <string name="title_notification">Thông báo</string>
+    <string name="hint_input_query">Nhập nội dung tìm kiếm</string>
+    <string name="text_search_by">Hoặc tìm kiếm theo tiêu chí</string>
+    <string name="title_house_type">Loại nhà đất *</string>
+    <string name="title_all">Tất cả</string>
+    <string name="text_address_2">Địa điểm</string>
+    <string name="text_select_address">Chọn địa điểm</string>
+    <string name="text_select_direction">Chọn hướng nhà</string>
+    <string name="title_direction">Hướng nhà</string>
+    <string name="title_price_range">Khoảng giá</string>
+    <string name="title_acr">Diện tích</string>
+    <string name="title_room">Số phòng ngủ</string>
+    <string name="title_search_button">Tìm kiếm</string>
+    <string name="title_use_button">Sử dụng</string>
+
+<!--    Register-->
+    <string name="title_register">Đăng ký tài khoản</string>
+    <string name="hint_register_name">Họ tên</string>
+    <string name="hint_register_phone">Số điện thoại</string>
+    <string name="hint_register_phone_2">Số điện thoại giới thiệu</string>
+    <string name="hint_description">Giới thiệu (tuỳ chọn)</string>
+    <string name="button_register">Đăng ký</string>
+    <string name="title_address_register">Địa chỉ (tuỳ chọn)</string>
+    <string name="hint_address_register">Chọn địa chỉ</string>
+    <string name="title_detail_register">Chọn chi tiết</string>
+    <string name="text_warning_fomat_name">Vui lòng không nhập các ký tự đặc biệt.</string>
+    <string name="text_warning_null_name">Vui lòng nhập họ tên.</string>
+    <string name="text_warning_fomat_phone">Định dạng không hợp lệ.</string>
+    <string name="text_warning_null_phone">Vui lòng nhập số điện thoại.</string>
+
+<!--    Verify-->
+    <string name="title_verify">Xác thực mã OTP</string>
+    <string name="button_verify">Xác thực</string>
+
+    <!--    Create House-->
+    <string name="title_create_house">Ký nhà</string>
+    <string name="text_warning_create">Không nhập các ký tự đặc biệt !@#$%^&amp;*()_+{}|:?></string>
+    <string name="title_type_house">Loại nhà đất *</string>
+    <string name="text_type_house">Nhà đất</string>
+    <string name="title_content_house">Nội dung*</string>
+    <string name="title_address_house">Địa điểm</string>
+    <string name="title_direction_house">Hướng nhà</string>
+    <string name="title_room_house">Nhập số phòng ngủ</string>
+    <string name="title_bonus_house">Nhập tỉ lệ hoa hồng</string>
+    <string name="title_image_house">Chọn ảnh căn nhà*</string>
+    <string name="text_address_house">Chọn địa điểm</string>
+    <string name="hint_bonus_house">Nhập số phòng ngủ</string>
+    <string name="hint_price_house">Giá</string>
+    <string name="hint_square_house">Diện tích</string>
+    <string name="hint_front_house">Mặt tiền</string>
+
+<!--    Profile-->
+    <string name="version_profile">\@ApionHome - v4.5.21</string>
+<!--Forget pincode-->
+    <string name="title_forget_pincode">Quên pin code</string>
+    <string name="hint_edt_phone_forget">Nhập số điện thoại đăng ký tài khoản của bạn</string>
+    <string name="button_sent_forget">Gửi</string>
+
+<!--    Get pincode-->
+    <string name="title_get_getcode">Đổi pin code</string>
+    <string name="hint_new_pincode">Pin code mới</string>
+    <string name="hint_confirm_pincode">Nhập lại pin code</string>
+    <string name="button_sent_pincode">Đổi pin code</string>
+
+<!--    Profile-->
+
+
+    <string name="title_select_location">Chọn địa chỉ</string>
+    <string name="title_select_province">Chọn tỉnh/thành phố *</string>
+    <string name="title_select_district">Chọn quận/huyện *</string>
+    <string name="title_select_street">Chọn đường phố</string>
+    <string name="title_all_house">Tất cả bất động sản</string>
+    <string name="title_profile">Trang cá nhân</string>
+
+</resources>

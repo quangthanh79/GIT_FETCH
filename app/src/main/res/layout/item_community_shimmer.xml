@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageAvatar"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_48"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_8"
+        android:adjustViewBounds="true"
+        android:background="@color/color_grey_40"
+        android:padding="@dimen/dp_1"
+        android:paddingStart="@dimen/dp_2"
+        android:paddingTop="@dimen/dp_4"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/roundImageView48" />
+
+    <TextView
+        android:id="@+id/textNameCommunity"
+        style="@style/TextNormal"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_16"
+        android:layout_marginHorizontal="@dimen/dp_8"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/color_grey_40"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="@+id/textHouse"
+        app:layout_constraintStart_toEndOf="@id/imageAvatar"
+        app:layout_constraintTop_toTopOf="@+id/imageAvatar" />
+
+    <TextView
+        android:id="@+id/textPerson"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/color_grey_40"
+        app:layout_constraintStart_toStartOf="@id/textNameCommunity"
+        app:layout_constraintTop_toBottomOf="@+id/textNameCommunity" />
+
+    <TextView
+        android:id="@+id/textHouse"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_12"
+        android:layout_marginStart="@dimen/dp_16"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/color_grey_40"
+        app:layout_constraintStart_toEndOf="@id/textPerson"
+        app:layout_constraintTop_toBottomOf="@+id/textNameCommunity" />
+
+    <Button
+        android:id="@+id/buttonJoin"
+        android:backgroundTint="@color/color_grey"
+        android:layout_width="@dimen/dp_48"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginHorizontal="@dimen/dp_16"
+        android:layout_marginVertical="@dimen/dp_4"
+        android:paddingHorizontal="@dimen/dp_4"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintBottom_toBottomOf="@+id/textPerson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageAvatar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

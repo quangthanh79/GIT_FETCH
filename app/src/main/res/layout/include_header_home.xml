@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="searchVM"
+            type="com.apion.apionhome.ui.search.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        <TextView-->
+<!--            android:id="@+id/titleSeachQuickly"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="@dimen/dp_4"-->
+<!--            android:background="@drawable/bg_search"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/title_search_quickly"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/editTextCity"-->
+<!--            style="@style/StyleEditText"-->
+<!--            android:drawableStart="@drawable/ic_city"-->
+<!--            android:focusable="false"-->
+<!--            android:hint="@string/hint_city"-->
+<!--            android:text="@{searchVM.province.name}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/titleSeachQuickly" />-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/editTextDistrict"-->
+<!--            style="@style/StyleEditText"-->
+<!--            android:drawableStart="@drawable/ic_district"-->
+<!--            android:focusable="false"-->
+<!--            android:hint="@string/hint_district"-->
+<!--            android:text="@{searchVM.district.name}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/editTextCity" />-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/editTextWard"-->
+<!--            style="@style/StyleEditText"-->
+<!--            android:layout_marginEnd="@dimen/dp_4"-->
+<!--            android:drawableStart="@drawable/ic_ward"-->
+<!--            android:drawablePadding="@dimen/dp_8"-->
+<!--            android:focusable="false"-->
+<!--            android:hint="@string/hint_ward"-->
+<!--            android:paddingHorizontal="@dimen/dp_8"-->
+<!--            android:text="@{searchVM.ward.getNameLocation()}"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/editTextStreet"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/editTextDistrict" />-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/editTextStreet"-->
+<!--            style="@style/StyleEditText"-->
+<!--            android:layout_marginStart="@dimen/dp_4"-->
+<!--            android:drawableStart="@drawable/ic_street"-->
+<!--            android:focusable="false"-->
+<!--            android:hint="@string/hint_street"-->
+<!--            android:text="@{searchVM.street.getNameLocation()}"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toEndOf="@+id/editTextWard"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/editTextDistrict" />-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/layoutPrice"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginHorizontal="@dimen/dp_16"-->
+<!--            android:layout_marginTop="@dimen/dp_8"-->
+<!--            android:background="@drawable/bg_rectangle"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/editTextStreet">-->
+
+<!--            <androidx.constraintlayout.widget.Guideline-->
+<!--                android:id="@+id/guidelineFirst"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                app:layout_constraintGuide_percent="0.33" />-->
+
+<!--            <androidx.constraintlayout.widget.Guideline-->
+<!--                android:id="@+id/guilineSecond"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                app:layout_constraintGuide_percent="0.66" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/editTextPrice"-->
+<!--                style="@style/TextSingle"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/dp_36"-->
+<!--                android:drawablePadding="@dimen/dp_8"-->
+<!--                android:focusable="false"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:hint="@string/hint_price"-->
+<!--                android:paddingHorizontal="@dimen/dp_8"-->
+<!--                android:text="@{searchVM.price!=null ? searchVM.price.getData() + ` tỷ` : ``}"-->
+<!--                app:drawableStartCompat="@drawable/ic_search_more"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guidelineFirst"-->
+<!--                app:layout_constraintHorizontal_bias="0.0"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/editTextAcreage"-->
+<!--                style="@style/TextSingle"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/dp_36"-->
+<!--                android:drawablePadding="@dimen/dp_8"-->
+<!--                android:focusable="false"-->
+<!--                android:gravity="center"-->
+<!--                android:hint="@string/hint_acreage"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:text="@{searchVM.acreage!=null ? searchVM.acreage.getData() + ` m2` : ``}"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toStartOf="@+id/guilineSecond"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/guidelineFirst"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/editTextFrontWidth"-->
+<!--                style="@style/TextSingle"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="@dimen/dp_36"-->
+<!--                android:layout_marginEnd="@dimen/dp_16"-->
+<!--                android:drawablePadding="@dimen/dp_8"-->
+<!--                android:focusable="false"-->
+<!--                android:gravity="center_vertical|end"-->
+<!--                android:hint="@string/hint_front_width"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:text="@{searchVM.frontWidth!=null ? searchVM.frontWidth.getData() + ` m` : ``}"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="1.0"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/guilineSecond"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/buttonSearch"-->
+<!--            style="@style/StyleButton"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="@dimen/dp_44"-->
+<!--            android:layout_marginHorizontal="@dimen/dp_16"-->
+<!--            android:layout_marginVertical="@dimen/dp_4"-->
+<!--            android:text="@string/title_search"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/layoutPrice" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.apion.apionhome.data.model.RangeUI" />
+
+        <variable
+            name="searchVM"
+            type="com.apion.apionhome.ui.search.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dp_24">
+
+        <TextView
+            android:id="@+id/titleSelectLocation"
+            style="@style/TextHighlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@string/title_select_location"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/sp_22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/icBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:src="@drawable/ic_back"
+            app:tint="@color/color_text_primary"
+            android:layout_marginStart="@dimen/dp_16"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/titleSelectLocation"
+            app:layout_constraintTop_toTopOf="@+id/titleSelectLocation" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleSelectLocation">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/textHouseType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_32"
+                    android:layout_marginStart="@dimen/dp_32"
+                    android:text="@string/title_select_province"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtProvince"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@{searchVM.province.name}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textHouseType" />
+
+                <TextView
+                    android:id="@+id/textDistrict"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_select_district"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtProvince"
+                    app:layout_constraintTop_toBottomOf="@+id/edtProvince" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtDistrict"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    tail="@{`Quận, huyện`}"
+                    textCustom="@{searchVM.district.title == null?@string/hint_district:searchVM.district.title}"                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textDistrict" />
+
+                <TextView
+                    android:id="@+id/textWard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="Chọn phường xã"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtDistrict"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDistrict" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtWard"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    tail="@{`Phường xã`}"
+                    textCustom="@{searchVM.ward.content==null?@string/hint_ward:searchVM.ward.content}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textWard" />
+
+                <TextView
+                    android:id="@+id/textStreet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_select_street"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtWard"
+                    app:layout_constraintTop_toBottomOf="@+id/edtWard" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtStreet"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    tail="@{`Đường phố`}"
+                    textCustom="@{searchVM.street.content==null?@string/hint_street:searchVM.street.content}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textStreet" />
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginVertical="@dimen/dp_32"
+                    android:background="@drawable/background_button1"
+                    android:paddingVertical="@dimen/dp_8"
+                    android:text="@string/title_use_button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtStreet" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

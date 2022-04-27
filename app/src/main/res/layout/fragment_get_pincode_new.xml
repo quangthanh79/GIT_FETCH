@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="getPincodeVM"
+            type="com.apion.apionhome.viewmodel.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title_Get"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#478C51"
+            android:paddingBottom="@dimen/dp_10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            >
+
+            <ImageView
+                android:id="@+id/imageBackForget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="23dp"
+                android:layout_marginTop="@dimen/dp_32"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTitleGet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_32"
+                android:text="@string/title_get_getcode"
+                android:textColor="#ffffff"
+                android:textSize="@dimen/sp_20"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <EditText
+            android:id="@+id/edtNewPincode"
+            style="@style/StyleEditTextRegister"
+            android:layout_marginTop="@dimen/dp_32"
+            android:hint="@string/hint_new_pincode"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:text="@={getPincodeVM.pin1}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title_Get" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:text="@{getPincodeVM.rulePin1}"
+            android:textColor="@color/color_red"
+            app:layout_constraintStart_toStartOf="@+id/edtNewPincode"
+            app:layout_constraintTop_toBottomOf="@+id/edtNewPincode" />
+
+        <EditText
+            android:id="@+id/edtConfirmPincode"
+            style="@style/StyleEditTextRegister"
+            android:layout_marginTop="@dimen/dp_16"
+            android:hint="@string/hint_confirm_pincode"
+            android:inputType="numberPassword"
+            android:maxLength="4"
+            android:text="@={getPincodeVM.pin2}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:text="@{getPincodeVM.rulePin2}"
+            android:textColor="@color/color_red"
+            app:layout_constraintStart_toStartOf="@+id/edtNewPincode"
+            app:layout_constraintTop_toBottomOf="@+id/edtConfirmPincode" />
+
+        <Button
+            android:id="@+id/btnChangePincode"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="@dimen/dp_70"
+            android:background="@drawable/background_button1"
+            android:text="@string/button_sent_pincode"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/sp_18"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.507"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

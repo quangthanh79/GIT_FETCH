@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:focusableInTouchMode="true">
+
+    <data>
+
+        <import type="com.apion.apionhome.data.model.RangeUI" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="searchVM"
+            type="com.apion.apionhome.ui.search.SearchViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dp_24">
+
+        <TextView
+            android:id="@+id/titleSearch"
+            style="@style/TextHighlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:text="@string/title_search"
+            android:textColor="@color/color_text_primary"
+            android:textSize="@dimen/sp_22"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/buttonNotification"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_marginEnd="@dimen/dp_24"
+            android:background="@drawable/ripple"
+            android:src="@drawable/ic_notification"
+            app:layout_constraintBottom_toBottomOf="@+id/titleSearch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/titleSearch"
+            app:tint="@color/color_grey" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="@dimen/dp_12"
+            android:layout_height="@dimen/dp_12"
+            android:background="@drawable/bg_badge"
+            android:gravity="center"
+            android:minWidth="@dimen/dp_12"
+            android:minHeight="@dimen/dp_12"
+            android:paddingHorizontal="@dimen/dp_2"
+            android:paddingVertical="@dimen/dp_1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            app:layout_constraintBottom_toTopOf="@+id/buttonNotification"
+            app:layout_constraintEnd_toEndOf="@+id/buttonNotification"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toEndOf="@+id/buttonNotification"
+            app:layout_constraintTop_toTopOf="@+id/buttonNotification"
+            app:layout_constraintVertical_bias="0.1" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleSearch">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textLayoutSearch"
+                    style="@style/StyleTextInputLayout"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    app:boxStrokeColor="@color/color_grey"
+                    app:boxStrokeWidth="@dimen/dp_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextSearch"
+                        style="@style/StyleEditText"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:focusable="false"
+                        android:hint="@string/hint_input_query"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:paddingHorizontal="@dimen/dp_8"
+                        android:text="@={searchVM.title}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textHouseType" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:id="@+id/textSearchBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/text_search_by"
+                    android:textColor="@color/color_text_primary"
+                    app:layout_constraintEnd_toEndOf="@+id/textLayoutSearch"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/textLayoutSearch" />
+
+                <TextView
+                    android:id="@+id/textHouseType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_house_type"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/textSearchBy" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textLayoutHouseType"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:layout_marginTop="8dp"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@string/title_all"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textHouseType" />
+
+                <TextView
+                    android:id="@+id/textAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/text_address_2"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/textLayoutHouseType" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textLayoutAddress"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:focusable="false"
+                    android:paddingStart="@dimen/dp_8"
+                    android:paddingEnd="@dimen/dp_32"
+                    android:text="@string/text_select_address"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textAddress" />
+
+                <ImageButton
+                    android:id="@+id/icDeleteAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_4"
+                    android:background="@null"
+                    android:src="@drawable/ic_baseline_close_24"
+                    android:visibility="@{searchVM.province == null ? View.GONE:View.VISIBLE}"
+                    app:layout_constraintBottom_toBottomOf="@+id/textLayoutAddress"
+                    app:layout_constraintEnd_toEndOf="@+id/textLayoutAddress"
+                    app:layout_constraintTop_toTopOf="@+id/textLayoutAddress" />
+
+                <TextView
+                    android:id="@+id/textDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_direction"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/textLayoutAddress" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textLayoutDirection"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_32"
+                    android:focusable="false"
+                    android:hint="@string/hint_ward"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@string/text_select_direction"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textDirection" />
+
+                <TextView
+                    android:id="@+id/textPriceRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_price_range"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/textLayoutDirection" />
+
+                <TextView
+                    android:id="@+id/textPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/hint_price"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/textLayoutDirection" />
+
+                <SeekBar
+                    android:id="@+id/seekBarPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:max="@{RangeUI.INSTANCE.priceRangeUis.values().size() - 1}"
+                    android:maxHeight="4dp"
+                    android:progressBackgroundTint="#000000"
+                    android:progressTint="#388e3c"
+                    android:scaleY="1"
+                    android:thumb="@drawable/thumb1"
+                    app:layout_constraintEnd_toEndOf="@+id/textPrice"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/textPriceRange"
+                    app:layout_constraintTop_toBottomOf="@+id/textPriceRange" />
+
+                <TextView
+                    android:id="@+id/textArgRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_acr"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarPrice" />
+
+                <TextView
+                    android:id="@+id/textArg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/hint_acreage"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarPrice" />
+
+                <SeekBar
+                    android:id="@+id/seekBarArg"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:max="@{RangeUI.INSTANCE.acreageRangeUis.values().size() -1}"
+                    android:maxHeight="4dp"
+                    android:progressBackgroundTint="#000000"
+                    android:progressTint="#388e3c"
+                    android:scaleY="1"
+                    android:thumb="@drawable/thumb1"
+                    app:layout_constraintEnd_toEndOf="@+id/textPrice"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/textPriceRange"
+                    app:layout_constraintTop_toBottomOf="@+id/textArgRange" />
+
+                <TextView
+                    android:id="@+id/textFrontRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/hint_front_width"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarArg" />
+
+                <TextView
+                    android:id="@+id/textFront"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/hint_front_width"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarArg" />
+
+                <SeekBar
+                    android:id="@+id/seekBarFront"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:max="@{RangeUI.INSTANCE.frontWidthRangeUis.values().size() - 1}"
+                    android:maxHeight="4dp"
+                    android:progressBackgroundTint="#000000"
+                    android:progressTint="#388e3c"
+                    android:scaleY="1"
+                    android:thumb="@drawable/thumb1"
+                    app:layout_constraintEnd_toEndOf="@+id/textPrice"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/textPriceRange"
+                    app:layout_constraintTop_toBottomOf="@+id/textFrontRange" />
+
+                <TextView
+                    android:id="@+id/textRoomRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_room_count"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarFront" />
+
+                <TextView
+                    android:id="@+id/textRoom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_room"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="@+id/textLayoutSearch"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarFront" />
+
+                <SeekBar
+                    android:id="@+id/seekBarRoom"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:max="@{RangeUI.INSTANCE.bedroomUis.values().size()-1}"
+                    android:maxHeight="4dp"
+                    android:progressBackgroundTint="#000000"
+                    android:progressTint="#388e3c"
+                    android:scaleY="1"
+                    android:thumb="@drawable/thumb1"
+                    app:layout_constraintEnd_toEndOf="@+id/textPrice"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/textPriceRange"
+                    app:layout_constraintTop_toBottomOf="@+id/textRoomRange" />
+
+                <Button
+                    android:id="@+id/btnSearch"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_24"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginBottom="@dimen/dp_48"
+                    android:background="@drawable/background_button1"
+                    android:paddingVertical="@dimen/dp_8"
+                    android:text="@string/title_search_button"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/seekBarRoom" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/start_navigation"
+    app:startDestination="@+id/startFragment">
+
+    <activity
+        android:id="@+id/activitymain"
+        android:name="com.apion.apionhome.ui.MainActivity"
+        tools:layout="@layout/activity_detail" />
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.apion.apionhome.ui.geting_started.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start">
+
+    </fragment>
+    <action
+        android:id="@+id/actionToLoginStart"
+        app:destination="@id/loginFragment" />
+    <action
+        android:id="@+id/actionToPinCode"
+        app:destination="@id/pincodeFragment"
+        app:enterAnim="@anim/slide_left"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_right" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.apion.apionhome.ui.geting_started.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+
+
+        <action
+            android:id="@+id/actionToPhoneForget"
+            app:destination="@id/phoneForgetFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+
+        <action
+            android:id="@+id/actionToRegister"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right" />
+        <action
+            android:id="@+id/actionToVerifyLogin"
+            app:destination="@id/verifyLoginFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+
+        <!--        app:popEnterAnim="@anim/fade_in"-->
+        <!--        app:popExitAnim="@anim/slide_bottom"-->
+    </fragment>
+    <fragment
+        android:id="@+id/verifyLoginFragment"
+        android:name="com.apion.apionhome.ui.geting_started.VerifyLoginFragment"
+        tools:layout="@layout/fragment_verify_phone_login">
+        <action
+            android:id="@+id/actionToVerifyPincodeStartFragment"
+            app:destination="@id/verifyPincodeStartFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/actionToConfirmPhone"
+            app:destination="@id/confirmPhoneFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/confirmPhoneFragment"
+        android:name="com.apion.apionhome.ui.geting_started.ConfirmPhoneFragment"
+        tools:layout="@layout/fragment_confirm_phone">
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/verifyPincodeStartFragment"
+        android:name="com.apion.apionhome.ui.geting_started.PincodeStartFragment"
+        tools:layout="@layout/fragment_start_pincode">
+        <action
+            android:id="@+id/actionToMain"
+            app:destination="@id/activitymain"
+            app:popUpTo="@id/activitymain"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/pincodeFragment"
+        android:name="com.apion.apionhome.ui.geting_started.PincodeFragment"
+        android:label="fragment_pincode"
+        tools:layout="@layout/fragment_pincode">
+        <action
+            android:id="@+id/actionToMain"
+            app:destination="@id/activitymain"
+            app:popUpTo="@id/activitymain"
+            app:popUpToInclusive="false" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.apion.apionhome.ui.geting_started.RegisterFragment"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/actionToSelectLocation"
+            app:destination="@id/addressSelectLocationFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+        <action
+            android:id="@+id/actionToVerifyPhone"
+            app:destination="@id/verifyPhoneFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+
+    </fragment>
+    <action
+        android:id="@+id/actionToGetNewPincode"
+        app:destination="@id/getNewPincodeFragment"
+        app:enterAnim="@anim/slide_left"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_right"
+        app:popExitAnim="@anim/slide_right" />
+    <fragment
+        android:id="@+id/phoneForgetFragment"
+        android:name="com.apion.apionhome.ui.geting_started.PhoneForgetFragment"
+        tools:layout="@layout/fragment_forget_pincode">
+
+    </fragment>
+    <fragment
+        android:id="@+id/getNewPincodeFragment"
+        android:name="com.apion.apionhome.ui.geting_started.GetNewPincodeFragment"
+        tools:layout="@layout/fragment_get_pincode_new" />
+    <fragment
+        android:id="@+id/verifyPhoneFragment"
+        android:name="com.apion.apionhome.ui.geting_started.VerifyPhoneFragment"
+        tools:layout="@layout/fragment_verify_phone">
+        <action
+            android:id="@+id/actionToConfirmRegister"
+            app:destination="@id/confirmRegisterFragment"
+            app:enterAnim="@anim/slide_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_right" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/confirmRegisterFragment"
+        android:name="com.apion.apionhome.ui.geting_started.ConfirmRegisterFragment"
+        tools:layout="@layout/fragment_confirm_register" >
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/selectProvinceFragment"
+        android:name="com.apion.apionhome.ui.geting_started.SelectProvinceFragment"
+        tools:layout="@layout/bottomsheet_search_location_register" />
+    <fragment
+        android:id="@+id/selectDistrictFragment"
+        android:name="com.apion.apionhome.ui.geting_started.SelectDistrictFragment"
+        tools:layout="@layout/bottomsheet_search_location_register" />
+    <fragment
+        android:id="@+id/selectWardFragment"
+        android:name="com.apion.apionhome.ui.geting_started.SelectWardFragment"
+        tools:layout="@layout/bottomsheet_search_location_register" />
+    <fragment
+        android:id="@+id/selectStreetFragment"
+        android:name="com.apion.apionhome.ui.geting_started.SelectStreetFragment"
+        tools:layout="@layout/bottomsheet_search_location_register" />
+    <fragment
+        android:id="@+id/addressSelectLocationFragment"
+        android:name="com.apion.apionhome.ui.geting_started.SelectLocationFragment"
+        tools:layout="@layout/fragment_select_location">
+        <action
+            android:id="@+id/actionToSelectProvince"
+            app:destination="@id/selectProvinceFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+        <action
+            android:id="@+id/actionToSelectDistrictFragment"
+            app:destination="@id/selectDistrictFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+        <action
+            android:id="@+id/actionToSelectWardFragment"
+            app:destination="@id/selectWardFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+        <action
+            android:id="@+id/actionToSelectStreetFragment"
+            app:destination="@id/selectStreetFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_bottom" />
+
+    </fragment>
+
+    <action
+        android:id="@+id/acttionToVerifyCustom"
+        app:destination="@+id/fragmentVerifyCustom" />
+    <fragment
+        android:id="@+id/fragmentVerifyCustom"
+        android:name="com.apion.apionhome.ui.geting_started.VerifyPhoneCustomFragment" />
+</navigation>

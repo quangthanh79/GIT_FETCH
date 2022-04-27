@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.apion.apionhome.data.model.User_I" />
+
+        <variable
+            name="userProfileVM"
+            type="com.apion.apionhome.viewmodel.ProfileViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/dp_24">
+
+        <TextView
+            android:id="@+id/titleUpdate"
+            style="@style/TextHighlight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_24"
+            android:text="Hi,"
+            android:textColor="@color/color_text_primary"
+            android:textSize="52sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleUpdate">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtName"
+                    style="@style/StyleEditText"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_16"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:paddingVertical="@dimen/dp_8"
+                    android:text="@={userProfileVM.name}"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Apion Home" />
+
+                <TextView
+                    android:id="@+id/textErrorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:text="Vui lòng nhập tên"
+                    android:textColor="@color/color_red"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@+id/edtName"
+                    app:layout_constraintTop_toBottomOf="@+id/edtName" />
+
+                <TextView
+                    android:id="@+id/textD"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="Hãy dành một chút thời gian để Apion Home có thể hiểu hơn về bạn nhé"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintEnd_toEndOf="@+id/edtName"
+                    app:layout_constraintStart_toStartOf="@+id/edtName"
+                    app:layout_constraintTop_toBottomOf="@+id/textErrorName" />
+
+                <TextView
+                    android:id="@+id/textInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="Thông tin của bạn:"
+                    android:textColor="@color/color_text_grey"
+                    android:textSize="@dimen/sp_18"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textD" />
+
+                <TextView
+                    android:id="@+id/textHouseType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="Email"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInfo" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtEmail"
+                    style="@style/StyleEditText"
+                    android:layout_marginHorizontal="@dimen/dp_16"
+                    android:hint="Nhập email"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@={userProfileVM.email}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textHouseType" />
+
+                <TextView
+                    android:id="@+id/textErrorEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Định dạng email không hợp lệ"
+                    android:textColor="@color/color_red"
+                    android:visibility="@{userProfileVM.emailRule == null? View.GONE:View.VISIBLE }"
+                    app:layout_constraintStart_toStartOf="@+id/edtEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+                <TextView
+                    android:id="@+id/textPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="Số điện thoại"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/textErrorEmail" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtphone"
+                    style="@style/StyleEditText"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@={userProfileVM.phone}"
+                    app:layout_constraintEnd_toEndOf="@+id/edtEmail"
+                    app:layout_constraintStart_toStartOf="@+id/textPhone"
+                    app:layout_constraintTop_toBottomOf="@+id/textPhone" />
+
+                <TextView
+                    android:id="@+id/textFB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="Facebook ID"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtphone"
+                    app:layout_constraintTop_toBottomOf="@+id/edtphone" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtFB"
+                    style="@style/StyleEditText"
+                    android:hint="Nhập facebook ID"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@={userProfileVM.fbId}"
+                    app:layout_constraintEnd_toEndOf="@+id/edtphone"
+                    app:layout_constraintStart_toStartOf="@+id/edtphone"
+                    app:layout_constraintTop_toBottomOf="@+id/textFB" />
+
+                <TextView
+                    android:id="@+id/textRefer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="Số điện thoại người giới thiệu"
+                    android:textColor="@color/color_text_grey"
+                    android:visibility="@{user.refer == null? View.VISIBLE:View.GONE}"
+                    app:layout_constraintStart_toStartOf="@+id/edtphone"
+                    app:layout_constraintTop_toBottomOf="@+id/edtFB" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtRefer"
+                    style="@style/StyleEditText"
+                    android:hint="Nhập số điện thoại người giới thiệu"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@={userProfileVM.refer}"
+                    android:visibility="@{user.refer == null? View.VISIBLE:View.GONE}"
+                    app:layout_constraintEnd_toEndOf="@+id/edtphone"
+                    app:layout_constraintStart_toStartOf="@+id/edtphone"
+                    app:layout_constraintTop_toBottomOf="@+id/textRefer" />
+
+                <TextView
+                    android:id="@+id/textErrorRefer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vui lòng nhập số điện thoại người giới thiệu"
+                    android:textColor="@color/color_red"
+                    android:visibility="@{userProfileVM.referRule == null? View.GONE:View.VISIBLE }"
+                    app:layout_constraintStart_toStartOf="@+id/edtRefer"
+                    app:layout_constraintTop_toBottomOf="@+id/edtRefer" />
+
+                <TextView
+                    android:id="@+id/textAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="@string/title_address"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtFB"
+                    app:layout_constraintTop_toBottomOf="@+id/textErrorRefer" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtAddress"
+                    style="@style/StyleEditText"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@{user.address}"
+                    app:layout_constraintEnd_toEndOf="@+id/edtFB"
+                    app:layout_constraintStart_toStartOf="@+id/edtFB"
+                    app:layout_constraintTop_toBottomOf="@+id/textAddress" />
+
+                <TextView
+                    android:id="@+id/textDOB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="Ngày sinh"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/edtAddress" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtDOB"
+                    style="@style/StyleEditText"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@{userProfileVM.dobShow==null?user.DOBDate:userProfileVM.dobShow}"
+                    app:layout_constraintEnd_toEndOf="@+id/edtAddress"
+                    app:layout_constraintStart_toStartOf="@+id/edtAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/textDOB" />
+
+                <TextView
+                    android:id="@+id/textSex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_12"
+                    android:text="Giới tính"
+                    android:textColor="@color/color_text_grey"
+                    app:layout_constraintStart_toStartOf="@+id/edtDOB"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDOB" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edtSex"
+                    style="@style/StyleEditText"
+                    android:focusable="false"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:text="@{userProfileVM.sexString}"
+                    app:layout_constraintEnd_toEndOf="@+id/edtAddress"
+                    app:layout_constraintStart_toStartOf="@+id/edtAddress"
+                    app:layout_constraintTop_toBottomOf="@+id/textSex" />
+
+                <TextView
+                    android:id="@+id/txtDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="@string/hint_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtSex" />
+
+                <EditText
+                    android:id="@+id/edtDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@drawable/background_view_2"
+                    android:gravity="top|left"
+                    android:minHeight="@dimen/dp_140"
+                    android:padding="@dimen/dp_16"
+                    android:text="@={user.bios}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDescription" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnDone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_24"
+                    android:layout_marginVertical="@dimen/dp_32"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="@drawable/background_button1"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:paddingVertical="@dimen/dp_1"
+                    android:text="Xong"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnAfter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_24"
+                    android:layout_marginVertical="@dimen/dp_32"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:background="@drawable/background_button1"
+                    android:backgroundTint="@color/color_text_grey"
+                    android:paddingHorizontal="@dimen/dp_8"
+                    android:paddingVertical="@dimen/dp_1"
+                    android:text="Để sau"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/btnDone"
+                    app:layout_constraintTop_toBottomOf="@+id/edtDescription" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

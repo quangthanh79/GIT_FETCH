@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="house"
+            type="com.apion.apionhome.data.model.House" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/dp_260"
+        android:layout_height="@dimen/dp_180"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:backgroundTint="@color/color_soft_peach"
+        android:elevation="@dimen/dp_4"
+        app:cardCornerRadius="@dimen/dp_12"
+        app:strokeColor="@color/color_second_primary"
+        app:strokeWidth="@dimen/dp_1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageAvatar"
+                image="@{house.owner.avatar}"
+                sex="@{house.owner.sex}"
+                android:layout_width="@dimen/dp_48"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:padding="@dimen/dp_1"
+                android:paddingStart="@dimen/dp_2"
+                android:paddingTop="@dimen/dp_4"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/roundImageView48"
+                app:strokeColor="@color/color_primary"
+                app:strokeWidth="@dimen/dp_1" />
+
+            <TextView
+                android:id="@+id/textNameUser"
+                style="@style/TextNormal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_8"
+                android:text="@{house.owner.name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintStart_toEndOf="@id/imageAvatar"
+                app:layout_constraintTop_toTopOf="@+id/imageAvatar" />
+
+            <TextView
+                android:id="@+id/textRole"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/title_owner"
+                android:textColor="@color/color_second_primary"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintStart_toStartOf="@id/textNameUser"
+                app:layout_constraintTop_toBottomOf="@+id/textNameUser" />
+
+            <TextView
+                android:id="@+id/textTitleHouse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:text="@{house.title}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="@+id/imageAvatar"
+                app:layout_constraintTop_toBottomOf="@+id/imageAvatar" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageHouse"
+                image="@{house.defaultImage}"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_80"
+                android:layout_marginHorizontal="@dimen/dp_8"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:shapeAppearanceOverlay="@style/cornerImageView"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/textTitleHouse" />
+
+
+            <TextView
+                android:id="@+id/textStatus"
+                status="@{house.status}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:background="@drawable/bg_rectangle_trans"
+                android:backgroundTint="@color/color_second_primary"
+                android:paddingHorizontal="@dimen/dp_4"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/imageHouse"
+                app:layout_constraintStart_toStartOf="@id/imageHouse"
+                app:layout_constraintTop_toBottomOf="@id/imageHouse" />
+
+            <TextView
+                android:id="@+id/textPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="@{house.getPriceConvert()}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/textStatus"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textStatus" />
+
+            <TextView
+                android:id="@+id/textAcreage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_24"
+                android:text="@{house.acreage +` m2`}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintBottom_toBottomOf="@+id/textStatus"
+                app:layout_constraintStart_toEndOf="@+id/textPrice"
+                app:layout_constraintTop_toTopOf="@+id/textStatus" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

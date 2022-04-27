@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="verifyVM"
+            type="com.apion.apionhome.viewmodel.UserViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="@string/title_verify"
+        android:textColor="#468645"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textTitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="Nhập mã xác thực"
+        android:textColor="#5E6C78 "
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        />
+    <TextView
+        android:id="@+id/textTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_2"
+        android:text="được gửi đến số điện thoại của bạn"
+        android:textColor="#5E6C78 "
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle1"
+        />
+    <TextView
+        android:id="@+id/textPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        textPhone="@{verifyVM.phoneRegister}"
+        android:text="+84 332 555 559"
+        android:textColor="#FFA087"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle2"
+        />
+    <LinearLayout
+        android:id="@+id/layoutOTP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_32"
+        app:layout_constraintTop_toBottomOf="@+id/textPhone"
+        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="horizontal"
+        >
+        <EditText
+            android:id="@+id/etPassword1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_weight="1"
+            android:background="@drawable/background_edt_text_1"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/sp_18"
+            android:inputType="number"
+            android:textColor="@drawable/edit_text_selector" />
+
+
+
+        />
+        <EditText
+            android:id="@+id/etPassword2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_weight="1"
+            android:background="@drawable/background_edt_text_1"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/sp_18"
+            android:inputType="number"
+            android:textColor="@drawable/edit_text_selector"
+
+            />
+        <EditText
+            android:id="@+id/etPassword3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_weight="1"
+            android:background="@drawable/background_edt_text_1"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/sp_18"
+            android:inputType="number"
+            android:textColor="@drawable/edit_text_selector"
+            />
+        <EditText
+            android:id="@+id/etPassword4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:background="@drawable/background_edt_text_1"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/sp_18"
+            android:inputType="number"
+            android:textColor="@drawable/edit_text_selector"
+            />
+        <EditText
+            android:id="@+id/etPassword5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_weight="1"
+            android:background="@drawable/background_edt_text_1"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/sp_18"
+            android:inputType="number"
+            android:textColor="@drawable/edit_text_selector"
+            />
+        <EditText
+            android:id="@+id/etPassword6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/background_edt_text_1"
+            android:gravity="center"
+            android:maxLength="1"
+            android:textSize="@dimen/sp_18"
+            android:inputType="number"
+            android:textColor="@drawable/edit_text_selector"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gửi lại mã xác thực sau 01:59"
+        android:layout_marginEnd="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="#5E6C78"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutOTP"/>
+
+    <Button
+        android:id="@+id/btnDoneVerify"
+        android:layout_width="160dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="@dimen/dp_106"
+        android:text="@string/button_verify"
+        android:textSize="15sp"
+        app:backgroundTint="#4E934F"
+        android:textColor="#ffffff"
+        android:background="@drawable/background_button5"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutOTP" />
+    <TextView
+        android:id="@+id/txtAnswer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="Bạn không nhận được mã xác thực?"
+        android:textColor="#FFA087"
+        android:textStyle="bold"
+        android:textSize="@dimen/sp_13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDoneVerify"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

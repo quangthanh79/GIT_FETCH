@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="house"
+            type="com.apion.apionhome.data.model.House" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_8">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageAvatar"
+            avatar="@{house.owner.avatar}"
+            gender="@{house.owner.sex}"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:padding="@dimen/dp_1"
+            android:paddingStart="@dimen/dp_2"
+            android:paddingTop="@dimen/dp_4"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundImageView48"
+            app:strokeColor="@color/color_second_primary"
+            app:strokeWidth="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_4"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{house.title}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageAvatar"
+            app:layout_constraintTop_toTopOf="@+id/imageAvatar" />
+
+        <TextView
+            android:id="@+id/textDateAgo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@{house.dateAgo}"
+            android:textColor="@color/color_grey"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintStart_toStartOf="@+id/textTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            image="@{house.defaultImage}"
+            android:layout_width="@dimen/dp_64"
+            android:layout_height="@dimen/dp_64"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="@+id/textTitle"
+            app:layout_constraintTop_toTopOf="@+id/textContent" />
+
+        <TextView
+            android:id="@+id/textContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:text="@{house.content}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:layout_constraintEnd_toEndOf="@+id/textTitle"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintStart_toStartOf="@+id/imageAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/textDateAgo" />
+
+        <TextView
+            android:id="@+id/textPrice"
+            style="@style/TextNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_12"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:text="@{house.getPriceConvert()}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textContent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            tools:text="15 tỷ" />
+
+        <TextView
+            android:id="@+id/textAcreage"
+            style="@style/TextNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:text="@{house.acreageConvert + ` m2`}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textPrice"
+            app:layout_constraintTop_toTopOf="@+id/textPrice"
+            tools:text="75 m2" />
+
+        <TextView
+            android:id="@+id/textAddress"
+            style="@style/TextNormal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:paddingHorizontal="@dimen/dp_8"
+            android:text="@{house.district+`, `+house.province}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/textAcreage"
+            app:layout_constraintTop_toTopOf="@+id/textPrice"
+            tools:text="Ba Đình, Hà Nội" />
+
+        <TextView
+            android:id="@+id/textStatus"
+            status="@{house.status}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rectangle_trans"
+            android:backgroundTint="@{house.isRedBack()?@color/color_red:@color/color_primary}"
+            android:paddingHorizontal="@dimen/dp_4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/textPrice"
+            tools:text="Đang bán" />
+
+        <View
+            android:id="@+id/deliver"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_8"
+            android:background="@color/color_grey"
+            app:layout_constraintEnd_toEndOf="@+id/textStatus"
+            app:layout_constraintStart_toStartOf="@+id/textPrice"
+            app:layout_constraintTop_toBottomOf="@+id/textPrice" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

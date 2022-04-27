@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.apion.apionhome.data.model.User_I" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/color_soft_peach"
+        app:cardCornerRadius="@dimen/dp_12">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.7" />
+
+            <TextView
+                android:id="@+id/textNameUser"
+                style="@style/TextHighlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:drawablePadding="@dimen/dp_8"
+                android:text="@{user.name}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/sp_14"
+                app:drawableEndCompat="@drawable/dot_online"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageAvatar"
+                image="@{user.avatar}"
+                sex="@{user.sex}"
+                android:layout_width="@dimen/dp_64"
+                android:layout_height="@dimen/dp_64"
+                android:layout_marginTop="@dimen/dp_16"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:paddingStart="@dimen/dp_2"
+                android:paddingTop="@dimen/dp_2"
+                android:paddingEnd="@dimen/dp_1"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="@id/textNameUser"
+                app:layout_constraintStart_toStartOf="@id/textNameUser"
+                app:layout_constraintTop_toBottomOf="@+id/textNameUser"
+                app:shapeAppearanceOverlay="@style/roundImageView"
+                app:strokeColor="@color/color_primary"
+                app:strokeWidth="@dimen/dp_1" />
+
+            <TextView
+                style="@style/TextNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_12"
+                android:background="@drawable/bg_rectangle_trans"
+                android:backgroundTint="@color/color_primary"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:text="@{`#` + user.id}"
+                android:textSize="@dimen/sp_10"
+                app:layout_constraintBottom_toBottomOf="@id/imageAvatar"
+                app:layout_constraintEnd_toEndOf="@id/imageAvatar"
+                app:layout_constraintStart_toStartOf="@+id/imageAvatar"
+                app:layout_constraintTop_toBottomOf="@id/imageAvatar" />
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/include_deliver_vertical"
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dp_8"
+                app:layout_constraintBottom_toBottomOf="@id/imageAvatar"
+                app:layout_constraintEnd_toEndOf="@id/guideline1"
+                app:layout_constraintStart_toStartOf="@id/guideline1"
+                app:layout_constraintTop_toTopOf="@id/imageAvatar" />
+
+            <TextView
+                android:id="@+id/textViewHouseSold"
+                style="@style/TextHighlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.houseSold.size()+``}"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/textDesHouseSold"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+            <TextView
+                android:id="@+id/textDesHouseSold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:text="@string/des_house_sold"
+                android:textAlignment="center"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@+id/include"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+            <TextView
+                android:id="@+id/textViewMyHouse"
+                style="@style/TextHighlight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{user.myHouses.size()+``}"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toTopOf="@+id/textDesHouseSold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline1" />
+
+            <TextView
+                android:id="@+id/textDesMyHouse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:text="@string/des_my_house"
+                android:textAlignment="center"
+                android:textSize="@dimen/sp_11"
+                app:layout_constraintBottom_toBottomOf="@+id/include"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline1" />
+
+            <TextView
+                android:id="@+id/buttonChatNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_marginBottom="@dimen/dp_16"
+                android:background="@drawable/bg_button_chat"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_4"
+                android:text="@string/title_chat_now"
+                android:textColor="@color/color_grey"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/include"
+                app:layout_constraintStart_toStartOf="@id/include"
+                app:layout_constraintTop_toBottomOf="@+id/textDesHouseSold" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

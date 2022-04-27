@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="house"
+            type="com.apion.apionhome.data.model.House" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_8">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageAvatar"
+            avatar="@{house.owner.avatar}"
+            gender="@{house.owner.sex}"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:padding="@dimen/dp_1"
+            android:paddingStart="@dimen/dp_2"
+            android:paddingTop="@dimen/dp_4"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundImageView48"
+            app:strokeColor="@color/color_second_primary"
+            app:strokeWidth="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_4"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{house.owner.positionPermission + ` ` + house.owner.name + ` vừa mới ký nhà lên hệ thống`}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageAvatar"
+            app:layout_constraintTop_toTopOf="@+id/imageAvatar"
+            tools:text="Chuyen vien dau chu Apion home vua moiw ky nha len he thong" />
+
+        <TextView
+            android:id="@+id/textDateAgo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@{house.dateAgo}"
+            android:textColor="@color/color_grey"
+            android:textSize="@dimen/sp_14"
+            app:layout_constraintStart_toStartOf="@+id/textTitle"
+            app:layout_constraintTop_toBottomOf="@+id/textTitle"
+            tools:text="22 gio truoc" />
+
+
+        <View
+            android:id="@+id/deliver"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@color/color_grey"
+            app:layout_constraintEnd_toEndOf="@+id/textTitle"
+            app:layout_constraintStart_toStartOf="@+id/imageAvatar"
+            app:layout_constraintTop_toBottomOf="@+id/textDateAgo" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageButton
+        android:id="@+id/icBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:background="@null"
+        android:src="@drawable/ic_back"
+        app:tint="@color/color_text_primary"
+        android:layout_marginStart="@dimen/dp_16"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:text="@string/title_verify"
+        android:textColor="#468645"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_marginHorizontal="@dimen/dp_48"
+        android:text="Không nhận được mã xác thực?"
+        android:gravity="left"
+        android:textColor="#5E6C78"
+        android:textSize="@dimen/sp_20"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_marginHorizontal="@dimen/dp_48"
+        android:text="Vui lòng xác định lại số điện thoại"
+        android:gravity="left"
+        android:textColor="#5E6C78"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintTop_toBottomOf="@+id/title1"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_marginHorizontal="@dimen/dp_48"
+        android:text="+84"
+        android:gravity="left"
+        android:textColor="#DA795F"
+        android:textSize="@dimen/sp_16"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingVertical="@dimen/dp_10"
+        android:background="@drawable/background_view_4"
+        app:layout_constraintTop_toBottomOf="@+id/title2"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <TextView
+        android:id="@+id/txtPhone2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_32"
+        android:layout_marginHorizontal="@dimen/dp_48"
+        android:text="332 555 5559"
+        android:gravity="left"
+        android:textColor="#364958"
+        android:textSize="@dimen/sp_16"
+        android:paddingStart="52dp"
+        android:paddingVertical="@dimen/dp_10"
+        app:layout_constraintTop_toBottomOf="@+id/title2"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+    <Button
+        android:id="@+id/btnDoneConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginTop="@dimen/dp_106"
+        android:text="Gửi lại mã xác thực"
+        android:paddingHorizontal="@dimen/dp_24"
+        android:textSize="15sp"
+        app:backgroundTint="#4E934F"
+        android:textColor="#ffffff"
+        android:background="@drawable/background_button5"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

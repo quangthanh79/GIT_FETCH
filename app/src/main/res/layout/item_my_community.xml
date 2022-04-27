@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="community"
+            type="com.apion.apionhome.data.model.community.Community" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_8">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageCommunity"
+            image="@{community.avatar}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="@dimen/dp_80"
+            android:maxHeight="@dimen/dp_80"
+            android:minWidth="@dimen/dp_64"
+            android:minHeight="@dimen/dp_64"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/cornerImageView"
+            app:strokeColor="@color/color_second_primary"
+            app:strokeWidth="@dimen/dp_1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@{community.name}"
+            android:textAlignment="center"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintEnd_toEndOf="@+id/imageCommunity"
+            app:layout_constraintStart_toStartOf="@+id/imageCommunity"
+            app:layout_constraintTop_toBottomOf="@+id/imageCommunity" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    <color name="color_tropical_rain">#017D4B</color>-->
+    <!--    <color name="color_apple">#62B146</color>-->
+    <color name="color_primary">#468645</color>
+    <color name="color_text_primary">#468645</color>
+
+    <color name="color_second_primary">#62B146</color>
+    <color name="black">#FF000000</color>
+    <color name="black_trans_70">#B2000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue_zodiac_200">#A6111F4A</color>
+    <color name="blue_zodiac_500">#DD111F4A</color>
+    <color name="blue_zodiac_700">#111F4A</color>
+    <color name="white_70">#70FFFFFF</color>
+    <color name="color_white_trans">#40FFFFFF</color>
+    <color name="color_black_trans_95">#50000000</color>
+    <color name="color_woodsmoke">#393838</color>
+    <color name="color_woodsmoke_trans">#B217191B</color>
+    <color name="color_grey_40">#65858484</color>
+    <color name="color_grandis">#FFD185</color>
+    <color name="color_grey">#858484</color>
+    <color name="color_red">#F80707</color>
+    <color name="color_boxStrokeColor">#ECD5D6</color>
+    <color name="enabled_color">#000000</color>
+    <color name="disabled_color">#000000</color>
+    <color name="color_black_70">#6e6c6b</color>
+    <color name="white_50">#80FFFFFF</color>
+    <color name="light_background">#F1F5FC</color>
+
+
+    <color name="color_silver_2">#4a4a4a</color>
+    <color name="color_silver">#C4C4C4</color>
+    <color name="color_silver_40">#65C4C4C4</color>
+    <color name="color_soft_peach">#F8F2F2</color>
+    <color name="color_apricot_peach">#FBBFB0</color>
+    <color name="color_bright_sun">#FDDF31</color>
+    <color name="color_prelude">#DABBE7</color>
+    <color name="color_harp">#D9EBE4</color>
+    <color name="color_beryl_green">#CEE0AD</color>
+    <color name="color_text_grey">#959595</color>
+</resources>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="com.apion.apionhome.data.model.RangeUI" />
+        <variable
+            name="searchVM"
+            type="com.apion.apionhome.ui.search.SearchViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="30dp"
+        >
+        <View
+            android:id="@+id/view_title"
+            android:layout_width="115dp"
+            android:layout_height="3dp"
+            android:layout_marginTop="25dp"
+            style="@style/StyleIconBottomSheet"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/title_square"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view_title" />
+        <TextView
+            android:id="@+id/price_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="@dimen/dp_18"
+            android:text="@string/hint_acreage"
+            android:textColor="#888B8F"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title" />
+        <TextView
+            android:id="@+id/txt_square"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="@dimen/dp_18"
+            android:text="@string/hint_acreage"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toBottomOf="@+id/text_title"/>
+
+
+        <SeekBar
+            android:id="@+id/seekBarHome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_8"
+            android:maxHeight="6dp"
+            android:max="@{RangeUI.INSTANCE.priceRangeUis.values().size() - 1}"
+            android:progressBackgroundTint="#000000"
+            android:progressTint="#388e3c"
+            android:scaleY="1"
+            android:thumb="@drawable/thumb1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_square" />
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="160dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="130dp"
+            android:text="@string/title_use_button"
+            android:textSize="15sp"
+            app:backgroundTint="#4E934F"
+            android:textColor="#ffffff"
+            android:background="@drawable/background_button5"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seekBarHome" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

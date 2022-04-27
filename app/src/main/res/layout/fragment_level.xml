@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="addHouseVM"
+            type="com.apion.apionhome.ui.add_home.AddHouseViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/icBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_16"
+            android:background="@null"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@+id/textContent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textContent"
+            app:tint="@color/color_text_primary" />
+
+        <TextView
+            android:id="@+id/textContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_32"
+            android:text="Hệ thống chức vụ"
+            android:textColor="#468645 "
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:paddingBottom="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textContent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txtDirector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:text="Giám đốc"
+                    android:textColor="#6C6C6F"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtDesDirector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/bg_rectangle_pink"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_4"
+                    android:text="Là người quản lý một khu vực rộng lớn với các BĐS giá trị. Tuy không tham gia chia hoa hồng nhưng giám đốc giúp hệ thống hoạt động hiệu quả, quản lý nhân sự và nguồn vốn"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDirector" />
+
+                <TextView
+                    android:id="@+id/txtE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="Bá tước"
+                    android:textColor="#6C6C6F"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDesDirector" />
+
+                <TextView
+                    android:id="@+id/txtDesE"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/bg_rectangle_pink"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_4"
+                    android:text="Chức vụ cấp cao thường được giao nhiệm vụ ký nhà, thẩm định giái trị căn nhà. Thường đi kèm với quyền đầu chủ"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtE" />
+
+                <TextView
+                    android:id="@+id/txtManager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="Trưởng phòng"
+                    android:textColor="#6C6C6F"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDesE" />
+
+                <TextView
+                    android:id="@+id/txtDesMagager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/bg_rectangle_pink"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_4"
+                    android:text="Chức vụ cấp cao, đi lên từ những cấp nhỏ hơn. Có kỹ năng cao, nhiều kịch bản chốt nhà, trực tiếp đào tạo mở khóa huấn luyện cấp dưới. Được nhận 1/4 hoa hồng mỗi khi cấp dưới bán được BĐS"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtManager" />
+
+                <TextView
+                    android:id="@+id/txtLead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="Trưởng nhóm"
+                    android:textColor="#6C6C6F"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDesMagager" />
+
+                <TextView
+                    android:id="@+id/txtDesLead"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/bg_rectangle_pink"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_4"
+                    android:text="Chức vụ quan trọng trong hệ thống. Training và tuyển dụng các môi giới trẻ"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtLead" />
+
+                <TextView
+                    android:id="@+id/txtCaptain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="Đội trưởng"
+                    android:textColor="#6C6C6F"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDesLead" />
+
+                <TextView
+                    android:id="@+id/txtDesCaptain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/bg_rectangle_pink"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_4"
+                    android:text="Khởi đầu sự nghiệp với một số chuyên viên dưới quyền"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtCaptain" />
+
+                <TextView
+                    android:id="@+id/txtC"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="Chuyên viên"
+                    android:textColor="#6C6C6F"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtDesCaptain" />
+
+                <TextView
+                    android:id="@+id/txtDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:background="@drawable/bg_rectangle_pink"
+                    android:paddingVertical="@dimen/dp_4"
+                    android:paddingStart="@dimen/dp_12"
+                    android:paddingEnd="@dimen/dp_4"
+                    android:text="Nhân viên chăm sóc khách hàng mu nhà chính. Chiếm số lượng đông đảo. Bán được nhiều BĐS sẽ được thăng chức"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtC" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
